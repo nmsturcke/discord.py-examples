@@ -20,7 +20,7 @@ class CommandGroup(app_commands.Group):
     
     @app_commands.command(name="three", description="The third command of the group")
     async def removeblacklist(self, interaction: discord.Interaction):
-        await interaction.response.send("Two!")
+        await interaction.response.send("Three!")
 
 class CommandGroupCog(commands.Cog):
     def __init__(self, bot):
