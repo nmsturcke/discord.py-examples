@@ -1,3 +1,4 @@
+import os
 import discord
 from discord import app_commands
 from discord.ext import commands
@@ -9,13 +10,18 @@ class Bot(commands.Bot):
         super().__init__(command_prefix="!", intents=intents)
     
     async def on_ready(self):
+        for filename in os.listdir("./cogs"):
+            if filename.endswith(".py"):
+                try:
+                    bot.load_extension(f"cogs.{filename[:-3]}")
+                    print(f"Loaded {filename}")
+                except Exception as e:
+                    print(f"Failed to load {filename}")
+                    print(f"[ERROR] {e}")
+
         await self.tree.sync()
         print("Successfully synced commands")
         print(f"Logged onto {self.user}")
-
-@app_commands.command(name="first", description="The first command!")
-async def first(interaction: discord.Interaction):
-    await interaction.response.send_message(content="Hello!")
 
 bot = Bot()
 bot.run('token')
