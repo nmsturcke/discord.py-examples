@@ -10,5 +10,5 @@ class FirstCog(commands.Cog):
     async def fromcog(self, interaction: discord.Interaction):
         await interaction.response.send_message("Hello, I'm sending from the cog!")
 
-def setup(bot):
-    bot.add_cog(FirstCog(bot))
+async def setup(bot):
+    await bot.add_cog(FirstCog(bot))

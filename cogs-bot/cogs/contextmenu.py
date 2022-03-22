@@ -11,5 +11,5 @@ class ContextMenuCog(commands.Cog):
         self.bot = bot
         self.bot.tree.add_command(click)
 
-def setup(bot):
-    bot.add_cog(ContextMenuCog(bot))
+async def setup(bot):
+    await bot.add_cog(ContextMenuCog(bot))

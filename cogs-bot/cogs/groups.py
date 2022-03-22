@@ -33,5 +33,5 @@ class CommandGroupCog(commands.Cog):
         self.bot.tree.remove_command(self.group.name, type=discord.AppCommandType.message)
 
 
-def setup(bot):
-    bot.add_cog(CommandGroupCog(bot))
+async def setup(bot):
+    await bot.add_cog(CommandGroupCog(bot))
