@@ -9,7 +9,7 @@ class Bot(commands.Bot):
     def __init__(self):
         super().__init__(command_prefix="!", intents=intents)
     
-    async def on_ready(self):
+    async def setup_hook(self):
         for filename in os.listdir("./cogs"):
             if filename.endswith(".py"):
                 try:
