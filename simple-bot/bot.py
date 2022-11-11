@@ -13,9 +13,10 @@ class Bot(commands.Bot):
         print("Successfully synced commands")
         print(f"Logged onto {self.user}")
 
-@app_commands.command(name="first", description="The first command!")
+bot = Bot()
+
+@bot.tree.command(name="first", description="The first command!")
 async def first(interaction: discord.Interaction):
     await interaction.response.send_message(content="Hello!")
 
-bot = Bot()
-bot.run('token')
+bot.run('ODc0MjQ0Mzk3MDMyNjczMzMx.GmZoV9.oSm6cvHFGMyInVhEx9mEQ2M86TW_JvsWat3wk0')
