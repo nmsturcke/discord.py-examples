@@ -19,4 +19,4 @@ bot = Bot()
 async def first(interaction: discord.Interaction):
     await interaction.response.send_message(content="Hello!")
 
-bot.run('ODc0MjQ0Mzk3MDMyNjczMzMx.GmZoV9.oSm6cvHFGMyInVhEx9mEQ2M86TW_JvsWat3wk0')
+bot.run('token')
